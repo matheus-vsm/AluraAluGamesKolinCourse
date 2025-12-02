@@ -16,6 +16,7 @@ data class Jogo(
         return "Meu Jogo: \n" +
                 "Título: $titulo \n" +
                 "Capa: $capa \n" +
-                "Descricao: $descricao"
+                "Descricao: $descricao" +
+                "Preço: R$$preco \n"
     }
 }
