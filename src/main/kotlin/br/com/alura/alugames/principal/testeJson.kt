@@ -14,10 +14,15 @@ fun main() {
 
     val gamer1 = listaGamers[3]
     val jogo1 = listaJogoJson[10]
-    val periodo = PeriodoAluguel(LocalDate.now(), LocalDate.now().plusDays(7))
+    val jogo2 = listaJogoJson[13]
+    val jogo3 = listaJogoJson[2]
+    val periodo1 = PeriodoAluguel(LocalDate.now(), LocalDate.now().plusDays(7))
+    val periodo2 = PeriodoAluguel(LocalDate.now(), LocalDate.now().plusDays(3))
+    val periodo3 = PeriodoAluguel(LocalDate.now(), LocalDate.now().plusDays(10))
 
-    println("O gamer ${gamer1.nome} está jogando ${jogo1.titulo}")
+    gamer1.alugaJogo(jogo1, periodo1)
+    gamer1.alugaJogo(jogo2, periodo2)
+    gamer1.alugaJogo(jogo3, periodo3)
 
-    val aluguel = gamer1.alugaJogo(jogo1, periodo)
-    println(aluguel)
+    gamer1.jogosAlugados.forEach { println(it) }
 }
