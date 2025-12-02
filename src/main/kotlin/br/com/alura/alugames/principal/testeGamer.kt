@@ -1,5 +1,7 @@
 package br.com.alura.alugames.principal
+
 import br.com.alura.alugames.modelo.Gamer
+
 fun main() {
     val gamer1 = Gamer("Jacque", "jacque@email.com")
     println(gamer1)
@@ -8,7 +10,8 @@ fun main() {
         "Jeni",
         "jeni@email.com",
         "19/19/1992",
-        "jeniblo")
+        "jeniblo"
+    )
 
     println(gamer2)
 
