@@ -33,7 +33,8 @@ data class Gamer(var nome: String, var email: String) {
     }
 
     override fun toString(): String {
-        return "Gamer(nome='$nome', email='$email', dataNascimento=$dataNascimento, usuario=$usuario, idInterno=$idInterno)"
+        return "Gamer:\nNome: $nome\nEmail: $email\n" +
+                "Data de Nascimento: $dataNascimento\nUsuario: $usuario\nId Interno: $idInterno)"
     }
 
     fun criarIdInterno() {
@@ -57,6 +58,12 @@ data class Gamer(var nome: String, var email: String) {
         jogosAlugados.add(aluguel)
 
         return aluguel
+    }
+
+    fun jogosDoMes(mes: Int): List<Jogo> {
+        return jogosAlugados
+            .filter { aluguel ->  aluguel?.periodo?.dataInicial?.monthValue == mes}
+            .map { aluguel -> aluguel!!.jogo }
     }
 
     companion object {
