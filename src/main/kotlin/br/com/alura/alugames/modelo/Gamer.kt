@@ -23,7 +23,7 @@ data class Gamer(var nome:String, var email:String) {
         criarIdInterno()
     }
 
-    init {
+    init { // bloco init é executado sempre que o construtor primário é chamado, e é chamado antes de construir o objeto
         if (nome.isNullOrBlank()) {
             throw IllegalArgumentException("Nome está em branco")
         }
