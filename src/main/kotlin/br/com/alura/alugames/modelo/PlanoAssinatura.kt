@@ -4,4 +4,9 @@ class PlanoAssinatura(
     tipo: String,
     val mensalidade: Double,
     val jogosIncluidos: Int
-) : Plano(tipo)
+) : Plano(tipo) {
+
+    override fun obterValorAluguel(aluguel: Aluguel): Double {
+        return 0.0
+    }
+}
