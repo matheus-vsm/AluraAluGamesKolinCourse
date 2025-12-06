@@ -42,6 +42,7 @@ fun main() {
     gamer2.alugaJogo(jogo1, periodo1)
     gamer2.alugaJogo(jogo2, periodo2)
     gamer2.alugaJogo(jogo3, periodo3)
+    gamer2.alugaJogo(jogo3, periodo3)
 
     println(gamer2.jogosAlugados)
 }
