@@ -42,7 +42,7 @@ fun main() {
     println()
 
     val gamer2 = listaGamers[5]
-    gamer2.plano = PlanoAssinatura("Prata", 9.90, 3, 0.15)
+//    gamer2.plano = PlanoAssinatura("Prata", 9.90, 3, 0.15)
     gamer2.alugaJogo(jogo1, periodo1)
     gamer2.alugaJogo(jogo2, periodo2)
     gamer2.alugaJogo(jogo3, periodo3)

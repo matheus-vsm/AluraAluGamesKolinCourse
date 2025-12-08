@@ -1,9 +1,13 @@
 package br.com.alura.alugames.modelo
 
+import java.math.BigDecimal
+
 // sealed permite que apenas classes no mesmo pacote ou modulo possam herdar desta classe
-sealed class Plano(val tipo: String) {
+sealed class Plano(
+    val tipo: String
+) {
     // open permite sobrescrita do método em subclasses
-    open fun obterValorAluguel(aluguel: Aluguel): Double {
-        return aluguel.jogo.preco * aluguel.periodo.emDias
+    open fun obterValorAluguel(aluguel: Aluguel): BigDecimal {
+        return aluguel.jogo.preco * aluguel.periodo.emDias.toBigDecimal()
     }
 }
