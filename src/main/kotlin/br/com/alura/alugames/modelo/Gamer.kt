@@ -1,5 +1,6 @@
 package br.com.alura.alugames.modelo
 
+import br.com.alura.alugames.utilitario.formatoComDuasCasasDecimais
 import java.time.LocalDate
 import java.util.Scanner
 import kotlin.random.Random
@@ -40,7 +41,7 @@ data class Gamer(
 
     // atribuindo a propriedade media da interface Recomendavel
     override val media: Double
-        get() = listaNotas.average()
+        get() = listaNotas.average().formatoComDuasCasasDecimais()
 
     override fun recomendar(nota: Int) {
         if (nota !in 0..10) { // nota < 0 || nota > 10
