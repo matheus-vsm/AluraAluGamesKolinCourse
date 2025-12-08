@@ -23,8 +23,10 @@ fun main() {
     val periodo1 = PeriodoAluguel(LocalDate.now(), LocalDate.now().plusDays(7))
     val periodo2 = PeriodoAluguel(LocalDate.now(), LocalDate.now().plusDays(3))
     val periodo3 = PeriodoAluguel(LocalDate.now(), LocalDate.now().plusDays(10))
-    val periodo4 = PeriodoAluguel(LocalDate.of(2023, 8, 2),
-        LocalDate.of(2023, 8, 15))
+    val periodo4 = PeriodoAluguel(
+        LocalDate.of(2023, 8, 2),
+        LocalDate.of(2023, 8, 15)
+    )
 
     gamer1.alugaJogo(jogo1, periodo1)
     gamer1.alugaJogo(jogo2, periodo2)
@@ -51,4 +53,12 @@ fun main() {
 
     gamer2.alugaJogo(jogo1, periodo1)
     println(gamer2.jogosAlugados)
+
+    println("\nRecomendações:")
+    gamer1.recomendarJogo(jogo1, 7)
+    gamer1.recomendarJogo(jogo2, 10)
+    println(gamer1.jogosRecomendados)
+    gamer2.recomendarJogo(jogo1, 7)
+    gamer2.recomendarJogo(jogo2, 10)
+    println(gamer2.jogosRecomendados)
 }
