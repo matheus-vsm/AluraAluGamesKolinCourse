@@ -42,6 +42,9 @@ data class Gamer(
         get() = listaNotas.average()
 
     override fun recomendar(nota: Int) {
+        if (nota !in 0..10) { // nota < 0 || nota > 10
+            throw IllegalArgumentException("A nota deve estar entre 0 e 10")
+        }
         listaNotas.add(nota)
     }
 
