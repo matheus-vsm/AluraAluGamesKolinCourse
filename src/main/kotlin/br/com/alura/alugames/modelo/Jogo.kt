@@ -1,8 +1,10 @@
 package br.com.alura.alugames.modelo
 
+import com.google.gson.annotations.Expose
+
 data class Jogo(
-    val titulo: String,
-    val capa: String
+    @Expose val titulo: String,
+    @Expose val capa: String
 ) : Recomendavel {
     var preco: Double = 0.0
     var descricao: String? = null

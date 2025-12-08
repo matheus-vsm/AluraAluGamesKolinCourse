@@ -3,6 +3,8 @@ package br.com.alura.alugames.principal
 import br.com.alura.alugames.modelo.PeriodoAluguel
 import br.com.alura.alugames.modelo.PlanoAssinatura
 import br.com.alura.alugames.servicos.ConsumoApi
+import com.google.gson.GsonBuilder
+import java.io.File
 import java.time.LocalDate
 
 fun main() {
@@ -80,4 +82,12 @@ fun main() {
     gamer1.recomendarJogo(jogoDandara, 8)
     gamer1.recomendarJogo(jogoSkyrim, 8)
     gamer1.recomendarJogo(jogoSpider, 6)
+
+    val gson = GsonBuilder().excludeFieldsWithoutExposeAnnotation().create() // Configuração para considerar apenas os campos anotados com @Expose
+    val serialzacao = gson.toJson(gamerCaroline.jogosRecomendados)
+    println("\nGamer Caroline em JSON:\n$serialzacao")
+
+    val arquivo = File("jogos_recomendados.json")
+    arquivo.writeText(serialzacao)
+    println(arquivo.absolutePath)
 }
