@@ -61,4 +61,23 @@ fun main() {
     gamer2.recomendarJogo(jogo1, 7)
     gamer2.recomendarJogo(jogo2, 10)
     println(gamer2.jogosRecomendados)
+
+    val gamerCaroline = listaGamers[3]
+    val jogoResidentVillage = listaJogoJson[10]
+    val jogoSpider = listaJogoJson[13]
+    val jogoTheLastOfUs = listaJogoJson[2]
+    val jogoDandara = listaJogoJson[5]
+    val jogoAssassins = listaJogoJson[4]
+    val jogoCyber = listaJogoJson[6]
+    val jogoGod = listaJogoJson[7]
+    val jogoSkyrim = listaJogoJson[18]
+
+    gamer1.recomendarJogo(jogoResidentVillage, 7)
+    gamer1.recomendarJogo(jogoTheLastOfUs, 10)
+    gamer1.recomendarJogo(jogoAssassins, 8)
+    gamer1.recomendarJogo(jogoCyber, 7)
+    gamer1.recomendarJogo(jogoGod, 10)
+    gamer1.recomendarJogo(jogoDandara, 8)
+    gamer1.recomendarJogo(jogoSkyrim, 8)
+    gamer1.recomendarJogo(jogoSpider, 6)
 }
