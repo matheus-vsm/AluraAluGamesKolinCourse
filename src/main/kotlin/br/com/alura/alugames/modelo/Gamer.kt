@@ -4,7 +4,10 @@ import java.time.LocalDate
 import java.util.Scanner
 import kotlin.random.Random
 
-data class Gamer(var nome: String, var email: String) {
+data class Gamer(
+    var nome: String,
+    var email: String
+) : Recomendavel {
     var dataNascimento: String? = null
     var usuario: String? = null
         set(value) {
@@ -18,6 +21,7 @@ data class Gamer(var nome: String, var email: String) {
     var plano: Plano = PlanoAvulso("BRONZE")
     val jogosBuscados = mutableListOf<Jogo?>()
     val jogosAlugados = mutableListOf<Aluguel?>()
+    private val listaNotas = mutableListOf<Int>()
 
     constructor(nome: String, email: String, dataNascimento: String, usuario: String) :
             this(nome, email) {
@@ -33,9 +37,18 @@ data class Gamer(var nome: String, var email: String) {
         this.email = validarEmail()
     }
 
+    // atribuindo a propriedade media da interface Recomendavel
+    override val media: Double
+        get() = listaNotas.average()
+
+    override fun recomendar(nota: Int) {
+        listaNotas.add(nota)
+    }
+
     override fun toString(): String {
         return "Gamer:\nNome: $nome\nEmail: $email\n" +
-                "Data de Nascimento: $dataNascimento\nUsuario: $usuario\nId Interno: $idInterno)"
+                "Data de Nascimento: $dataNascimento\nUsuario: $usuario\n" +
+                "Id Interno: $idInterno\nReputação: $media"
     }
 
     fun criarIdInterno() {
@@ -63,7 +76,7 @@ data class Gamer(var nome: String, var email: String) {
 
     fun jogosDoMes(mes: Int): List<Jogo> {
         return jogosAlugados
-            .filter { aluguel ->  aluguel?.periodo?.dataInicial?.monthValue == mes}
+            .filter { aluguel -> aluguel?.periodo?.dataInicial?.monthValue == mes }
             .map { aluguel -> aluguel!!.jogo }
     }
 

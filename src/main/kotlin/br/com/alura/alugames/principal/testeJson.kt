@@ -44,5 +44,10 @@ fun main() {
     gamer2.alugaJogo(jogo3, periodo3)
     gamer2.alugaJogo(jogo3, periodo3)
 
+    gamer2.recomendar(7)
+    gamer2.recomendar(10)
+    gamer2.recomendar(8)
+    println(gamer2)
+
     println(gamer2.jogosAlugados)
 }
