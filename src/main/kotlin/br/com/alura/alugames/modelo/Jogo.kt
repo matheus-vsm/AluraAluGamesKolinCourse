@@ -32,6 +32,6 @@ data class Jogo(
                 "Descricao: $descricao \n" +
                 "Preço: R$$preco \n" +
                 "Reputação: $media\n" +
-                "Id: $id"
+                "Id: $id\n"
     }
 }
