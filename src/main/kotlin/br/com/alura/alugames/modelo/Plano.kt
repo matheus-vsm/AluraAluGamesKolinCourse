@@ -8,7 +8,7 @@ sealed class Plano(
     var id: Int = 0
 ) {
     // open permite sobrescrita do método em subclasses
-    open fun obterValorAluguel(aluguel: Aluguel): BigDecimal {
-        return aluguel.jogo.preco * aluguel.periodo.emDias.toBigDecimal()
+    open fun obterValorAluguel(aluguel: Aluguel): Double {
+        return aluguel.jogo.preco * aluguel.periodo.emDias
     }
 }
