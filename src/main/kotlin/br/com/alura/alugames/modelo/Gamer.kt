@@ -17,6 +17,7 @@ data class Gamer(
                 criarIdInterno()
             }
         }
+    var id = 0
     var idInterno: String? = null
         private set
     var plano: Plano = PlanoAvulso("BRONZE")
@@ -25,10 +26,11 @@ data class Gamer(
     private val listaNotas = mutableListOf<Int>()
     val jogosRecomendados = mutableListOf<Jogo?>()
 
-    constructor(nome: String, email: String, dataNascimento: String, usuario: String) :
+    constructor(nome: String, email: String, dataNascimento: String, usuario: String, id: Int = 0) :
             this(nome, email) {
         this.dataNascimento = dataNascimento
         this.usuario = usuario
+        this.id = id
         criarIdInterno()
     }
 
@@ -58,7 +60,7 @@ data class Gamer(
     override fun toString(): String {
         return "Gamer:\nNome: $nome\nEmail: $email\n" +
                 "Data de Nascimento: $dataNascimento\nUsuario: $usuario\n" +
-                "Id Interno: $idInterno\nReputação: $media"
+                "Id Interno: $idInterno\nReputação: $media\nId: $id"
     }
 
     fun criarIdInterno() {

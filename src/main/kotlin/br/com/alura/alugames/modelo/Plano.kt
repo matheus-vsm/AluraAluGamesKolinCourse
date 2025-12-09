@@ -4,7 +4,8 @@ import java.math.BigDecimal
 
 // sealed permite que apenas classes no mesmo pacote ou modulo possam herdar desta classe
 sealed class Plano(
-    val tipo: String
+    val tipo: String,
+    var id: Int = 0
 ) {
     // open permite sobrescrita do método em subclasses
     open fun obterValorAluguel(aluguel: Aluguel): BigDecimal {

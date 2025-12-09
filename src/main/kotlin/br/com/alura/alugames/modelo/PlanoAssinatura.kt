@@ -6,8 +6,9 @@ class PlanoAssinatura(
     tipo: String,
     val mensalidade: BigDecimal,
     val jogosIncluidos: Int,
-    val percentualDescontoReputacao: BigDecimal
-) : Plano(tipo) {
+    val percentualDescontoReputacao: BigDecimal,
+    id : Int = 0
+) : Plano(tipo, id) {
 
     override fun obterValorAluguel(aluguel: Aluguel): BigDecimal {
         val totalJogosMes = aluguel.gamer.jogosDoMes(aluguel.periodo.dataInicial.monthValue).size+1 // +1 para incluir o jogo atual
@@ -21,5 +22,14 @@ class PlanoAssinatura(
             }
             valorOriginal
         }
+    }
+
+    override fun toString(): String {
+        return "Plano Assinatura\n" +
+                "Tipo: $tipo\n" +
+                "Id: $id\n" +
+                "Mensalidade: $mensalidade\n" +
+                "Jogos Incluidos: $jogosIncluidos\n" +
+                "Percentual Desconto Reputacao: $percentualDescontoReputacao\n"
     }
 }
