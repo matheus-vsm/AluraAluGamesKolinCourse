@@ -1,5 +1,9 @@
 package br.com.alura.alugames.dados
 
+import javax.persistence.EntityManager
+import javax.persistence.EntityManagerFactory
+import javax.persistence.Persistence
+
 // object faz com que a classe seja singleton, ou seja, só pode ter uma instância dela
 object Banco {
 //    fun obterConexao(): Connection? {
