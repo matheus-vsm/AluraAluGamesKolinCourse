@@ -2,19 +2,11 @@ package br.com.alura.alugames.modelo
 
 import br.com.alura.alugames.utilitario.formatoComDuasCasasDecimais
 import com.google.gson.annotations.Expose
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
-import javax.persistence.Table
 
-@Entity
-@Table(name = "jogos")
 data class Jogo(
     @Expose val titulo: String,
     @Expose val capa: String
 ) : Recomendavel {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id = 0
     var preco: Double = 0.0
     var descricao: String? = null
@@ -27,7 +19,7 @@ data class Jogo(
         listaNotas.add(nota)
     }
 
-    constructor(titulo: String, capa: String, preco: Double, descricao: String, id: Int = 0) : this(titulo, capa) {
+    constructor(titulo: String, capa: String, preco: Double, descricao: String?, id: Int = 0) : this(titulo, capa) {
         this.preco = preco
         this.descricao = descricao
         this.id = id
