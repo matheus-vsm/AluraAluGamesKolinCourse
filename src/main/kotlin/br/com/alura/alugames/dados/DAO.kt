@@ -22,7 +22,7 @@ abstract class DAO<TModel, TEntity>(
         manager.transaction.commit()
     }
 
-    open fun recuperarPeloId(id: Int): TModel? {
+    open fun recuperarPeloId(id: Int): TModel {
         val query = manager.createQuery("FROM ${entityType.simpleName} WHERE id=:id", entityType)
         query.setParameter("id", id)
         val entity = query.singleResult

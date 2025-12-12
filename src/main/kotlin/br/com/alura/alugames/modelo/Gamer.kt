@@ -60,7 +60,7 @@ data class Gamer(
     override fun toString(): String {
         return "Gamer:\nNome: $nome\nEmail: $email\n" +
                 "Data de Nascimento: $dataNascimento\nUsuario: $usuario\n" +
-                "Id Interno: $idInterno\nReputação: $media\nId: $id"
+                "Id Interno: $idInterno\nReputação: $media\nId: $id\nPlano: $plano\n"
     }
 
     fun criarIdInterno() {
@@ -111,7 +111,6 @@ data class Gamer(
             } else {
                 return Gamer(nome, email)
             }
-
         }
     }
 }
